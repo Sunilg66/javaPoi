@@ -1,0 +1,75 @@
+1)Configuration class
+
+Configuration Methods:
+1) Configuration configure();
+2) Configuration addClass(Class ref):
+3) SessionFactory buildSessionFactory();
+
+**************************************************************************
+
+2)SessionFactory interface
+
+SessionFactoryMethods:
+1)Session openSession();
+2)void close();
+
+**************************************************************************
+
+3)Session interface
+a)Delete methods:
+1) void delete(Object obj);
+2) void delete(String entityName,Object obj);
+
+b)get methods:
+1) <T>T get(Class<T> entityType, Serializable id);
+2) <T>T get(Class<T> entityType, Serializable id, LockMode lockMode);
+3) <T>T get(Class<T> entityType, Serializable id, LockOptions lockOptions);
+4) Object get(String entityName, Serializable id);
+5) Object get(String entityName, Serializable id, LockMode lockMode);
+6) Object get(String entityName, Serializable id, LockOptions lockOptions);
+
+c)load methods:
+1) <T>T  load(Class<T> theClass, Serializable id);
+2) <T>T load(Class<T> theClass, Serializable id, LockMode lockMode);
+3) <T>T load(Class<T> theClass, Serializable id, LockOptions lockOptions);
+4) void load(Object object, Serializable id);
+5) Object load(String entityName, Serializable id);
+6) Object load(String entityName, Serializable id, LockMode lockMode);
+7) Object load(String entityName, Serializable id, LockOptions lockOptions);
+
+d)save methods:
+1) Serializable save(Object object);
+2) Serializable save(String entityName, Object object);
+
+e)update methods:
+1) void update(Object object);
+2) void update(String entityName, Object object);
+
+f)begintransaction methods:
+1) Transactioin beginTransaction();
+
+g)gettransaction methods:
+1) Transaction getTransaction();
+
+h)createQuery methods:
+1) Query createQuery(String queryString);
+2) <R>Query<R>	createQuery(String queryString, Class<R> resultClass);
+
+i)createSQLQuery methods:
+1) default SQLQuery	createSQLQuery(String queryString);
+
+j) close methods:
+1) void close();
+
+k)createcriteria methods:
+1) Criteria createCriteria(Class persistentClass);
+2) Criteria createCriteria(Class persistentClass,String alias); 
+3) Criteria createCriteria(String entityName);
+4) Criteria createCriteria(String entityName,String alias);
+
+**************************************************************************
+
+D)Transaction Interface
+Methods:
+1)void commit();
+2)void rollback();
